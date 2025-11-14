@@ -1,1 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+/* @import url(https://fonts.bunny.net/css?family=instrument-sans:600); */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+body {
+    font-family: 'Geist', sans-serif;
+    /* font-family: 'Instrument sans', sans-serif; */
+}

@@ -1,12 +1,6 @@
 <div>
-    <div class="card p-3">
-        @if ($mode == 'add-form')
-            <h5>Tambah siswa</h5>
-        @elseif ($mode == 'edit-form')
-            <h5>Edit siswa</h5>
-        @else
-            <h5>Undefined</h5>
-        @endif
+    <div class="card p-3 d-flex align-items-center" style="height: 450px;">
+        <h5>Edit Siswa</h5>
 
         <form wire:submit="save">
             <div class="mt-2">
@@ -26,14 +20,5 @@
                 Simpan
             </button>
         </form>
-
-        @if ($mode == 'edit-form')
-            <div class="d-flex pt-2 gap-1">
-                <a href="#" wire:click.prevent="backMode" style="text-decoration: none;" class="text-dark">Kembali
-                    ke tambah siswa</a>
-                <span data-lucide="arrow-up-right" width="13"></span>
-            </div>
-        @endif
-
     </div>
 </div>

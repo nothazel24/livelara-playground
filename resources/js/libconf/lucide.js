@@ -1,5 +1,11 @@
 // lucide library
-import { createIcons, ArrowUpRight, UserRound, Trash } from 'lucide';
+import {
+    createIcons,
+    ArrowUpRight,
+    UserRound,
+    Trash,
+    Pencil
+} from 'lucide';
 
 // mengapa diperlukan?, biar ter-reload secara penuh di livewire
 const initializeLucide = () => {
@@ -10,7 +16,8 @@ const initializeLucide = () => {
                 // list icon yang dibutuhkan
                 ArrowUpRight,
                 UserRound,
-                Trash
+                Trash,
+                Pencil
             }
         });
     }

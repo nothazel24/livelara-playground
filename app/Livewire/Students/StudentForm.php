@@ -8,13 +8,21 @@ use App\Livewire\Traits\SwalAlert;
 // validating form
 use Livewire\Attributes\Validate;
 
+use Livewire\Attributes\On;
+
 use App\Models\Student;
 use Livewire\Component;
+
+use function PHPUnit\Framework\throwException;
 
 class StudentForm extends Component
 {
     // pemanggilan traits (helper)
     use SwalAlert;
+
+    // perubahan mode
+    public $mode = 'add-form';
+    public $studentId;
 
     public $name, $class, $nisn;
 
@@ -34,7 +42,7 @@ class StudentForm extends Component
             // name
             'name.required' => 'Nama tidak boleh kosong!',
             'name.min' => 'Nama terlalu pendek (min 8 karakter).',
-            'name.regex' => 'Nama tidak boleh diisi oleh angka!',
+            'name.regex' => 'Nama tidak boleh diisi oleh angka/simbol!',
 
             // class
             'class.required' => 'Kelas tidak boleh kosong!',
@@ -75,6 +83,43 @@ class StudentForm extends Component
             'Berhasil!',
             'Data siswa berhasil ditambahkan.'
         );
+    }
+
+    // add-form listener
+    #[On('change-mode')]
+    public function changeMode($mode, $studentId = null)
+    {
+        $this->mode = $mode;
+        $this->studentId = $studentId;
+
+        if ($this->mode == $mode) {
+            $this->swalSuccess('Success!', 'Berhasil berpindah ke mode edit.');
+
+            // if statement
+            if ($this->mode == 'edit-form' && $this->studentId) {
+                // cari data berdasarkan id yang diterima
+                $student = Student::findOrFail($this->studentId);
+
+                // muat data untuk dikelola form
+                $this->name = $student->name;
+                $this->class = $student->class;
+                $this->nisn = $student->nisn;
+            } else {
+                // reset / back mode
+                $this->reset(['name', 'class', 'nisn', 'studentId']);
+            }
+        } else {
+            $this->reset(['name', 'class', 'nisn', 'studentId']);
+            return ($this->swalError('Error!', 'Tidak dapat berpindah mode. Coba hubungi maintainer'));
+        }
+
+        $this->dispatch('refresh-data');
+    }
+
+    public function backMode()
+    {
+        $this->mode = 'add-form';
+        $this->swalSuccess('Berhasil!', 'Berhasil berpindah ke mode tambah.');
     }
 
     public function render()

@@ -22,10 +22,10 @@
 
     {{ $slot }}
 
+    @include('home.footer')
+
     {{-- livewire scripts --}}
     @livewireScripts()
-
-    <x-footer />
 </body>
 
 </html>

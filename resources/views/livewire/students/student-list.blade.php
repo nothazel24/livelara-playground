@@ -21,16 +21,16 @@
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->class }}</td>
                         <td>{{ $student->nisn }}</td>
-                        <td>
-                            {{-- <button class="btn btn-danger btn-sm d-flex gap-1 align-items-center"
-                                wire:click="delete({{ $student->id }})">
-                                <span data-lucide="trash" width="16"></span>
-                                Hapus
-                            </button> --}}
+                        <td class="d-flex align-items-center gap-2 justify-content-center">
                             <button class="btn btn-danger btn-sm d-flex gap-1 align-items-center"
-                                wire:click="deleteConfirm({{ $student->id }})">
+                                wire:click.prevent="deleteConfirm({{ $student->id }})">
                                 <span data-lucide="trash" width="16"></span>
                                 Hapus
+                            </button>
+                            <button class="btn btn-warning btn-sm d-flex gap-1 align-items-center px-3"
+                                wire:click.prevent="edit({{ $student->id }})">
+                                <span data-lucide="pencil" width="16"></span>
+                                Edit
                             </button>
                         </td>
                     </tr>
