@@ -6,3 +6,4 @@ window.bootstrap = bootstrap;
 
 import './libconf/sweetalert';
 import './libconf/lucide';
+import './libconf/swiper';

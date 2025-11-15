@@ -36,4 +36,11 @@
         @endif
 
     </div>
+
+    {{-- styling component --}}
+    <style scoped>
+        h5 {
+            text-decoration: underline;
+        }
+    </style>
 </div>
