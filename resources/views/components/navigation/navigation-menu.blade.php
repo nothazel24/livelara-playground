@@ -13,6 +13,7 @@
                 {{-- cara mengakses x-component blade "x-namafolder(jika ada*)-file" --}}
                 <x-navigation.nav-link href="/" :active="request()->routeIs('home.main')">Home</x-navigation.nav-link>
                 <x-navigation.nav-link href="/students" :active="request()->routeIs('home.students')">Students</x-navigation.nav-link>
+                <x-navigation.nav-link href="/docs/">Docs</x-navigation.nav-link>
             </ul>
 
             {{-- login section --}}
