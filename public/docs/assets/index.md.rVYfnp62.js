@@ -1,0 +1,1 @@
+import{ai as e,c as t,o as a}from"./chunks/framework.CtQSWY-C.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{"layout":"doc"},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),o={name:"index.md"},_=Object.assign(o,{setup(r){return e().go("/docs/markdown-examples"),(n,c)=>(a(),t("div"))}});export{i as __pageData,_ as default};

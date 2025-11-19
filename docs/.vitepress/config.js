@@ -2,12 +2,10 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Guide",
-  description: "Tuntunan menggunakan aplikasi",
+  title: "Testing site",
+  description: "A testing vitepress site",
   base: '/docs/',
-  // rewrites: {
-  //   'index' : 'markdown-example'
-  // },
+  // lastUpdated: true, // <- perlu package git dlm npm (malas setup di docker)
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -26,8 +24,9 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Dirilis pada tahun 2025.',
-      copyright: 'Copyright © 2025'
+      message: 'Testing messages.',
+      copyright: 'Copyright © 2025 by ryanBajindul'
     }
   }
 })
+
