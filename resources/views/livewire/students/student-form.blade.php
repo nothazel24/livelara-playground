@@ -8,7 +8,7 @@
             <h5>Undefined</h5>
         @endif
 
-        <form wire:submit="save">
+        <form wire:submit="@if ($mode == 'add-form') save @elseif($mode == 'edit-form') update @endif">
             <div class="mt-2">
                 <label for="name" class="form-label small">Nama</label>
                 <x-form.input.text name="name" wire:model.live.debounce="name" placeholder="John Doe" autofocus />
@@ -36,11 +36,4 @@
         @endif
 
     </div>
-
-    {{-- styling component --}}
-    <style scoped>
-        h5 {
-            text-decoration: underline;
-        }
-    </style>
 </div>

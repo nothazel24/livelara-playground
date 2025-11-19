@@ -61,30 +61,6 @@ class StudentForm extends Component
         $this->validateOnly($property);
     }
 
-    // function save
-    public function save()
-    {
-        $this->validate();
-
-        Student::create([
-            'name' => $this->name,
-            'class' => $this->class,
-            'nisn' => $this->nisn,
-        ]);
-
-        // reset form
-        $this->reset();
-
-        // kirim event ke component StudentList
-        $this->dispatch('refresh-data')->to(StudentList::class);
-
-        // kirim event notification (sweetalert2)
-        $this->swalSuccess(
-            'Berhasil!',
-            'Data siswa berhasil ditambahkan.'
-        );
-    }
-
     // add-form listener
     #[On('change-mode')]
     public function changeMode($mode, $studentId = null)
@@ -119,7 +95,51 @@ class StudentForm extends Component
     public function backMode()
     {
         $this->mode = 'add-form';
+        
+        $this->reset(['name', 'class', 'nisn', 'studentId']);
         $this->swalSuccess('Berhasil!', 'Berhasil berpindah ke mode tambah.');
+    }
+
+    // function save
+    public function save()
+    {
+        $this->validate();
+
+        Student::create([
+            'name' => $this->name,
+            'class' => $this->class,
+            'nisn' => $this->nisn,
+        ]);
+
+        // reset form
+        $this->reset();
+
+        // kirim event ke component StudentList
+        $this->dispatch('refresh-data')->to(StudentList::class);
+
+        // kirim event notification (sweetalert2)
+        $this->swalSuccess(
+            'Berhasil!',
+            'Data siswa berhasil ditambahkan.'
+        );
+    }
+
+    // function update (edit)
+    public function update() {
+        $this->validate();
+
+        Student::findOrFail($this->studentId)->update([
+            'name' => $this->name,
+            'class' => $this->class,
+            'nisn' => $this->nisn
+        ]);
+
+        // change mode & reset form
+        $this->mode = 'add-form';
+        $this->reset(['name', 'class', 'nisn', 'studentId']);
+
+        $this->swalSuccess('Berhasil!', 'Data siswa berhasil diperbaharui');
+        $this->dispatch('refresh-data');
     }
 
     public function render()

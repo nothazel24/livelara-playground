@@ -16,7 +16,6 @@
             </thead>
             <tbody>
                 @forelse ($students as $student)
-                    {{-- <livewire:students.block :student="$student" wire:key="{{ $student->id }}" /> --}}
                     <tr>
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->class }}</td>
