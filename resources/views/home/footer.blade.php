@@ -1,5 +1,5 @@
-<footer class="container">
-    <p class="text-muted mt-2">
+<footer class="container mx-auto my-5">
+    <p class="text-slate-500">
         &copy; by ryanBajindul - 2025.
     </p>
 </footer>

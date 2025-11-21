@@ -1,6 +1,11 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 /* @import url(https://fonts.bunny.net/css?family=instrument-sans:600); */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+/* tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
     font-family: 'Geist', sans-serif;

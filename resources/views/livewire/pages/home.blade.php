@@ -1,5 +1,5 @@
 <div>
-    <div class="container p-4">
+    <div class="container mx-auto w-full">
 
         {{-- <livewire:home.hero-section /> --}}
         {{-- <x-home.hero-section /> --}}

@@ -1,19 +1,11 @@
 <div>
-    <div class="swiper w-100">
+    <div class="swiper h-1.5 rounded-lg">
         <div class="swiper-wrapper">
-            <div class="swiper-slide bg-danger"></div>
-            <div class="swiper-slide bg-warning"></div>
-            <div class="swiper-slide bg-info"></div>
-            <div class="swiper-slide bg-success"></div>
-            <div class="swiper-slide bg-secondary"></div>
+            <div class="swiper-slide bg-red-500"></div>
+            <div class="swiper-slide bg-yellow-400"></div>
+            <div class="swiper-slide bg-blue-400"></div>
+            <div class="swiper-slide bg-green-500"></div>
+            <div class="swiper-slide bg-gray-500"></div>
         </div>
     </div>
-
-    <style scoped>
-        .swiper {
-            height: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
 </div>
