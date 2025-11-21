@@ -1,12 +1,12 @@
 <div>
-    <div class="card p-3">
-        <div class="d-flex">
+    <div class="container w-full mx-auto p-4 border border-slate-600 rounded-md">
+        <div class="flex">
             <span data-lucide="user-round" width="20" class="me-2"></span>
             <h5>Daftar Siswa</h5>
         </div>
 
-        <table class="table table-bordered mt-3">
-            <thead class="table-info">
+        <table class="mt-3 w-full">
+            <thead class="bg-blue-500 text-white">
                 <tr>
                     <th>Nama</th>
                     <th>Kelas</th>
@@ -16,17 +16,17 @@
             </thead>
             <tbody>
                 @forelse ($students as $student)
-                    <tr>
-                        <td>{{ $student->name }}</td>
-                        <td>{{ $student->class }}</td>
-                        <td>{{ $student->nisn }}</td>
-                        <td class="d-flex align-items-center gap-2 justify-content-center">
-                            <button class="btn btn-danger btn-sm d-flex gap-1 align-items-center"
+                    <tr class="odd:bg-white even:bg-slate-100 text-center">
+                        <td class="px-5">{{ $student->name }}</td>
+                        <td class="px-5">{{ $student->class }}</td>
+                        <td class="px-5">{{ $student->nisn }}</td>
+                        <td class="flex align-middle justify-center">
+                            <button class="bg-red-600 px-3 py-2 m-3 flex align-middle justify-between text-white gap-2  rounded-md hover:bg-red-700"
                                 wire:click.prevent="deleteConfirm({{ $student->id }})">
                                 <span data-lucide="trash" width="16"></span>
                                 Hapus
                             </button>
-                            <button class="btn btn-warning btn-sm d-flex gap-1 align-items-center px-3"
+                            <button class="bg-amber-500 px-3 py-2 m-3 flex align-middle justify-between text-white gap-2  rounded-md hover:bg-amber-600"
                                 wire:click.prevent="edit({{ $student->id }})">
                                 <span data-lucide="pencil" width="16"></span>
                                 Edit

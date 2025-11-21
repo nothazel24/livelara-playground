@@ -5,10 +5,10 @@
                 {{ config('app.name') }}
             </a>
 
-            <ul class="flex items-center gap-8">
+            <ul class="flex items-center gap-4">
                 <x-navigation.nav-link href="/" :active="request()->routeIs('home.main')">Home</x-navigation.nav-link>
                 <x-navigation.nav-link href="/students" :active="request()->routeIs('home.students')">Students</x-navigation.nav-link>
-                <x-navigation.nav-link href="/docs">Docs</x-navigation.nav-link>
+                <x-navigation.nav-link href="/docs/">Docs</x-navigation.nav-link>
             </ul>
         </div>
     </div>
